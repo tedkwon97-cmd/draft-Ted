@@ -6,45 +6,85 @@
     <title>Ted Kwon | SyllabusX</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        body { 
+            background: radial-gradient(circle at top right, #1e293b, #0f172a); 
+            color: #f8fafc; 
+            font-family: 'Inter', sans-serif; 
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
         .hidden-content { display: none; }
     </style>
 </head>
-<body class="max-w-2xl mx-auto p-8 md:p-16">
+<body class="max-w-3xl mx-auto p-8 md:p-20">
 
-    <header class="mb-12">
-        <h1 class="text-4xl font-bold mb-4 text-blue-400">Ted Kwon</h1>
-        <p class="text-lg text-slate-400 italic">9th Semester Berklee Student | Dual Major in Music Business & Performance (Guitar)</p>
-        <p class="mt-4 text-slate-300">Bridging the gap between elite musical talent and the commercial market. 10+ years of jazz/fusion experience.</p>
+    <header class="mb-16 text-center">
+        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900/30 rounded-full border border-blue-500/30">
+            9th Semester Berklee Student
+        </div>
+        <h1 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">
+            Ted Kwon
+        </h1>
+        <p class="text-xl text-slate-400 font-light">Guitarist & Music Business Strategist</p>
+        
+        <div class="mt-6 flex justify-center gap-6 text-slate-500">
+            <a href="#" class="hover:text-blue-400 transition-colors">Instagram</a>
+            <a href="#" class="hover:text-blue-400 transition-colors">YouTube</a>
+            <a href="#" class="hover:text-blue-400 transition-colors">LinkedIn</a>
+        </div>
     </header>
 
-    <section class="mb-12 border-l-2 border-blue-500 pl-6">
-        <h2 class="text-xl font-semibold mb-2">Primary Gear</h2>
-        <ul class="text-slate-400 list-disc list-inside">
-            <li>MacBook Pro M3 14"</li>
-            <li>Dell 27" 4K S2725QC</li>
-            <li>Neural DSP Quad Cortex</li>
-        </ul>
-    </section>
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <section class="glass-card p-6 rounded-2xl">
+            <h2 class="text-sm font-bold text-blue-500 uppercase tracking-widest mb-4 italic">Primary Gear</h2>
+            <ul class="space-y-2 text-slate-300">
+                <li class="flex items-center">🎸 Suhr Modern</li>
+                <li class="flex items-center">🎸 Strandberg Salen Jazz NX 6</li>
+                <li class="flex items-center">🎛️ Neural DSP Quad Cortex</li>
+                <li class="flex items-center">💻 MacBook Pro M3 14"</li>
+            </ul>
+        </section>
 
-    <hr class="border-slate-800 mb-12">
+        <section class="glass-card p-6 rounded-2xl">
+            <h2 class="text-sm font-bold text-indigo-500 uppercase tracking-widest mb-4 italic">On My Mind</h2>
+            <ul class="space-y-2 text-slate-300">
+                <li class="flex items-center">🏃 Madrid Marathon Prep</li>
+                <li class="flex items-center">🎵 Jazz-Fusion Improvisation</li>
+                <li class="flex items-center">📈 Music Tech Entrepreneurship</li>
+            </ul>
+        </section>
+    </div>
 
-    <section class="mb-12">
-        <h2 onclick="toggleContent()" class="text-2xl font-bold cursor-pointer hover:text-blue-400 transition-colors flex items-center">
-            What I Care About Right Now <span class="ml-2 text-sm text-blue-500 underline">(Click to Toggle)</span>
+    <hr class="border-slate-800 mb-16">
+
+    <section class="mb-16">
+        <h2 onclick="toggleContent()" class="text-2xl font-bold cursor-pointer hover:text-blue-400 transition-colors flex justify-between items-center group">
+            What I Care About Right Now
+            <span class="text-sm text-slate-500 group-hover:text-blue-500">Click to explore →</span>
         </h2>
-        <div id="purpose-text" class="hidden-content mt-4 p-6 bg-slate-800 rounded-lg text-slate-200 leading-relaxed">
-            I am currently exploring how to turn academic musical assignments into "production-ready" commercial assets. The problem of high-level creative work being treated as disposable after grading matters to me because it represents a massive loss of value for students. You should follow my work if you're interested in a future where elite student output is directly integrated into the global music market.
+        <div id="purpose-text" class="hidden-content mt-6 p-8 glass-card rounded-2xl text-slate-200 leading-relaxed italic border-l-4 border-blue-500">
+            I am currently curious about the untapped human capital of elite music students. I am exploring how to turn academic musical assignments into "production-ready" commercial assets. The problem of high-level creative work being treated as disposable after grading matters to me because it represents a massive loss of value for students. You should follow my work if you're interested in a future where elite student output is directly integrated into the global music market.
         </div>
     </section>
 
-    <section class="mb-12 bg-blue-900/20 p-8 rounded-xl border border-blue-500/30">
-        <h2 class="text-2xl font-bold mb-4">What I’m Building</h2>
-        <p class="mb-2 text-blue-100"><strong>SyllabusX:</strong> A platform connecting corporate projects with music school curricula.</p>
-        <p class="mb-2 text-blue-100"><strong>For:</strong> Indie game developers and startups needing professional audio assets.</p>
-        <p class="mb-4 text-blue-100"><strong>Problem:</strong> Solves the high cost of production while giving students real-world credits.</p>
-        <a href="mailto:tedkwon97@example.com" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-all">Join the waitlist</a>
+    <section class="glass-card p-10 rounded-3xl border-2 border-blue-500/20 shadow-2xl shadow-blue-500/10">
+        <h2 class="text-3xl font-bold mb-6 italic">Building: <span class="text-blue-400 text-4xl">SyllabusX</span></h2>
+        <div class="space-y-4 text-lg text-slate-300 mb-8">
+            <p>A platform connecting corporate projects with music school curricula.</p>
+            <p><strong>For:</strong> Indie game developers needing pro-grade audio assets.</p>
+            <p><strong>Solution:</strong> Professional results at a scholarship-level budget.</p>
+        </div>
+        <a href="mailto:tedkwon@example.com" class="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-blue-600/30">
+            Join the Waitlist
+        </a>
     </section>
+
+    <footer class="mt-20 text-center text-slate-600 text-sm">
+        © 2026 Ted Kwon | Built with Vibe Coding on MacBook Pro M3
+    </footer>
 
     <script>
         function toggleContent() {
