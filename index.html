@@ -9,11 +9,11 @@
     <style>
         /* [Prompt 1: Design System] */
         :root {
-            --bg-color: #121212;      /* 눈이 편한 짙은 차콜 */
-            --text-main: #F5F5F5;     /* 부드러운 화이트 */
-            --text-muted: #A0A0A0;    /* 차분한 그레이 */
-            --accent-gold: #D4AF37;   /* 고급스러운 골드 */
-            --card-bg: #1A1A1A;       /* 카드 배경 */
+            --bg-color: #121212;      /* Deep Charcoal */
+            --text-main: #F5F5F5;     /* Soft Cream */
+            --text-muted: #94A3B8;    /* Muted Slate */
+            --accent-gold: #C5A059;   /* Sophisticated Gold */
+            --card-bg: #1A1A1A;
         }
 
         body {
@@ -24,15 +24,17 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Typography Scale */
+        /* Typography System */
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
         }
 
-        h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); color: var(--accent-gold); margin-bottom: 0.5rem; }
-        h2 { font-size: 2rem; margin-top: 4rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: inline-block; }
+        h1 { font-size: clamp(2.5rem, 8vw, 4rem); color: var(--accent-gold); margin-bottom: 0.5rem; }
+        h2 { font-size: 2.25rem; margin-top: 5rem; margin-bottom: 1.5rem; color: var(--text-main); }
         h3 { font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem; }
+
+        p { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1.5rem; max-width: 65ch; }
 
         /* [Prompt 2: Layout Clarity] */
         .container-custom {
@@ -41,9 +43,9 @@
             padding: 0 1.5rem;
         }
 
-        section {
-            padding: 4rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        .section-divider {
+            border-top: 1px solid rgba(197, 160, 89, 0.15);
+            margin: 4rem 0;
         }
 
         /* [Prompt 3: CTA Polish] */
@@ -52,51 +54,83 @@
             background: transparent;
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            padding: 14px 36px;
-            border-radius: 4px;
+            padding: 16px 40px;
+            border-radius: 2px; /* 각진 형태로 더 전문적인 느낌 */
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            letter-spacing: 0.2em;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
             text-decoration: none;
-            outline: none;
         }
 
-        .cta-button:hover, .cta-button:focus {
+        .cta-button:hover {
             background: var(--accent-gold);
             color: var(--bg-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        /* [Prompt 4: Mobile & Accessibility] */
+        /* [Prompt 4: Mobile Responsiveness] */
         @media (max-width: 640px) {
-            h1 { font-size: 2.25rem; }
-            section { padding: 3rem 0; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.75rem; }
+            .container-custom { padding: 0 1.25rem; }
             .cta-button { width: 100%; text-align: center; }
         }
 
         .value-card {
             background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 3rem;
+            border-left: 4px solid var(--accent-gold);
+            margin: 3rem 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="container-custom py-20">
-        <header class="mb-20 text-center md:text-left">
-            <div class="inline-block border border-[#D4AF37] px-4 py-1 mb-8 text-[10px] font-semibold tracking-[0.3em] text-[#D4AF37] uppercase">
-                9th Semester Berklee Student
+    <div class="container-custom py-24">
+        <header class="mb-32">
+            <div class="inline-block px-4 py-1 mb-8 text-[11px] font-semibold tracking-[0.4em] text-[#C5A059] uppercase border-b border-[#C5A059]">
+                9th Semester | Berklee College of Music
             </div>
             <h1>Ted Kwon</h1>
-            <p class="text-2xl italic font-serif opacity-90">Music Business & Performance Strategy</p>
-            <p class="mt-4 text-sm tracking-widest uppercase opacity-60">Gear: Suhr Guitars | Strandberg | Quad Cortex</p>
+            <p class="text-2xl italic font-serif opacity-80">Music Business & Performance Strategy</p>
         </header>
 
         <section>
-            <h2>The Concept: SyllabusX</h2>
-            <p
+            <h2>The Concept</h2>
+            <p>
+                Established industry structures often fail to capture the true value of emerging creative assets. I am building <strong>SyllabusX</strong> to bridge the gap between elite music education and professional production.
+            </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="value-card">
+            <h3>Free Resource: Sourcing Elite Talent</h3>
+            <p class="text-sm italic mb-8 opacity-70">"Strategic steps to find professional-grade audio without the agency markup."</p>
+            
+            <div class="space-y-8">
+                <div>
+                    <span class="text-[#C5A059] font-bold text-xs tracking-widest uppercase block mb-2">Step 01</span>
+                    <p class="text-sm"><strong>Monetize Syllabus Output:</strong> Visit final recitals at elite schools. These assignments are professional-grade assets ready for commercial use.</p>
+                </div>
+                <div>
+                    <span class="text-[#C5A059] font-bold text-xs tracking-widest uppercase block mb-2">Step 02</span>
+                    <p class="text-sm"><strong>Find Unvetted Talent:</strong> Use niche tags on SoundCloud like "Film Scoring Final" to discover world-class creators before they enter the mainstream.</p>
+                </div>
+                <div>
+                    <span class="text-[#C5A059] font-bold text-xs tracking-widest uppercase block mb-2">Step 03</span>
+                    <p class="text-sm"><strong>Offer Real-World Credit:</strong> For many top students, a commercial credit is a more powerful currency than a small one-time payment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center md:text-left pt-12">
+            <p class="mb-12 text-lg">Interested in a verified bridge to elite student talent?</p>
+            <a href="#" class="cta-button">Join the Waitlist</a>
+        </section>
+    </div>
+
+</body>
+</html>
