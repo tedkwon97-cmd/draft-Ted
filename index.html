@@ -7,12 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* [Prompt 1: Design System] */
         :root {
-            --bg-color: #121212;
-            --text-main: #F5F5F5;
-            --text-muted: #A0A0A0;
-            --accent-gold: #D4AF37;
-            --card-bg: rgba(255, 255, 255, 0.03);
+            --bg-color: #121212;      /* 눈이 편한 짙은 차콜 */
+            --text-main: #F5F5F5;     /* 부드러운 화이트 */
+            --text-muted: #A0A0A0;    /* 차분한 그레이 */
+            --accent-gold: #D4AF37;   /* 고급스러운 골드 */
+            --card-bg: #1A1A1A;       /* 카드 배경 */
         }
 
         body {
@@ -23,19 +24,29 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* UI Upgrade 1: Typography System */
+        /* Typography Scale */
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             letter-spacing: -0.02em;
         }
 
-        h1 { font-size: 3.5rem; color: var(--accent-gold); margin-bottom: 0.5rem; }
-        h2 { font-size: 2rem; margin-top: 4rem; margin-bottom: 1.5rem; color: var(--text-main); border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: inline-block; }
+        h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); color: var(--accent-gold); margin-bottom: 0.5rem; }
+        h2 { font-size: 2rem; margin-top: 4rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: inline-block; }
         h3 { font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem; }
 
-        p { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1.5rem; max-width: 65ch; }
+        /* [Prompt 2: Layout Clarity] */
+        .container-custom {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
-        /* UI Upgrade 2: Color Palette & CTA Polish */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* [Prompt 3: CTA Polish] */
         .cta-button {
             display: inline-block;
             background: transparent;
@@ -48,78 +59,44 @@
             letter-spacing: 0.15em;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             text-decoration: none;
+            outline: none;
         }
 
-        .cta-button:hover {
+        .cta-button:hover, .cta-button:focus {
             background: var(--accent-gold);
             color: var(--bg-color);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
         }
 
+        /* [Prompt 4: Mobile & Accessibility] */
+        @media (max-width: 640px) {
+            h1 { font-size: 2.25rem; }
+            section { padding: 3rem 0; }
+            .cta-button { width: 100%; text-align: center; }
+        }
+
         .value-card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 2.5rem;
             border-radius: 8px;
             margin: 2rem 0;
-        }
-
-        .step-item {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .step-number {
-            color: var(--accent-gold);
-            font-weight: bold;
-            margin-right: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
     </style>
 </head>
-<body class="max-w-4xl mx-auto px-8 py-24">
+<body>
 
-    <header class="mb-24">
-        <div class="inline-block border border-[#D4AF37] px-4 py-1 mb-8 text-[10px] font-semibold tracking-[0.3em] text-[#D4AF37] uppercase">
-            9th Semester Berklee Student
-        </div>
-        <h1>Ted Kwon</h1>
-        <p class="text-2xl italic font-serif opacity-90">Music Business & Performance Strategy</p>
-        <p class="mt-4 text-sm tracking-widest uppercase opacity-60">Gear: Suhr Guitars | Strandberg | Quad Cortex</p>
-    </header>
-
-    <section>
-        <h2>The Concept: SyllabusX</h2>
-        <p>
-            Traditional agencies ignore student work as "homework." I see a hidden gold mine of professional-grade assets that are more creative and cost-effective.
-        </p>
-    </section>
-
-    <section class="value-card">
-        <h3>Free Guide: Pro Audio for Indie Devs</h3>
-        <p class="text-sm italic mb-6">"How to find elite talent today without spending your entire marketing budget."</p>
-        
-        <div class="space-y-4">
-            <div class="step-item">
-                <span class="step-number">01</span>
-                <p class="text-sm"><strong>Visit Final Recitals:</strong> Elite music students produce studio-quality scores for their finals. These are professional assets ready for real-world use.</p>
+    <div class="container-custom py-20">
+        <header class="mb-20 text-center md:text-left">
+            <div class="inline-block border border-[#D4AF37] px-4 py-1 mb-8 text-[10px] font-semibold tracking-[0.3em] text-[#D4AF37] uppercase">
+                9th Semester Berklee Student
             </div>
-            <div class="step-item">
-                <span class="step-number">02</span>
-                <p class="text-sm"><strong>Search SoundCloud Niche:</strong> Use tags like "Berklee Student" or "Film Scoring Assignment" to find talent before they become expensive pros.</p>
-            </div>
-            <div class="step-item">
-                <span class="step-number">03</span>
-                <p class="text-sm"><strong>Offer Official Credit:</strong> For top-tier students, a commercial credit on a live project is often more valuable than a small one-time fee.</p>
-            </div>
-        </div>
-    </section>
+            <h1>Ted Kwon</h1>
+            <p class="text-2xl italic font-serif opacity-90">Music Business & Performance Strategy</p>
+            <p class="mt-4 text-sm tracking-widest uppercase opacity-60">Gear: Suhr Guitars | Strandberg | Quad Cortex</p>
+        </header>
 
-    <section class="mt-16 text-center md:text-left">
-        <p class="mb-8">Want a verified bridge to this elite talent? Join the waitlist for <strong>SyllabusX</strong>.</p>
-        <a href="#" class="cta-button">Join the Waitlist</a>
-    </section>
-
-</body>
-</html>
+        <section>
+            <h2>The Concept: SyllabusX</h2>
+            <p
