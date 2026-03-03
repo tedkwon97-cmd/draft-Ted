@@ -17,6 +17,53 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .hidden-content { display: none; }
+        /* --- 여기에 붙여넣으세요 --- */
+
+/* 1. Typography System: 가독성과 리듬감 개선 */
+h1 {
+  font-size: 2.75rem; /* 더 강조된 메인 제목 */
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ffffff, #94a3b8); /* 그라데이션 효과 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f1f5f9;
+}
+
+p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+/* 2. Button/CTA Polish: SyllabusX 버튼 업그레이드 */
+.cta-button {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.9); /* 인디고 색상 */
+  color: white;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.cta-button:hover {
+  background: rgba(79, 70, 229, 1);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.4);
+}
     </style>
 </head>
 <body class="max-w-3xl mx-auto p-8 md:p-20">
