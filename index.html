@@ -1,143 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ted Kwon | SyllabusX</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { 
-            background: radial-gradient(circle at top right, #1e293b, #0f172a); 
-            color: #f8fafc; 
-            font-family: 'Inter', sans-serif; 
+        :root {
+            --bg-color: #121212;
+            --text-main: #F5F5F5;
+            --text-muted: #A0A0A0;
+            --accent-gold: #D4AF37; /* 따뜻하고 고급스러운 골드 */
+            --accent-hover: #B8962E;
         }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
         }
-        .hidden-content { display: none; }
-        /* --- 여기에 붙여넣으세요 --- */
 
-/* 1. Typography System: 가독성과 리듬감 개선 */
-h1 {
-  font-size: 2.75rem; /* 더 강조된 메인 제목 */
-  font-weight: 850;
-  letter-spacing: -0.04em;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #ffffff, #94a3b8); /* 그라데이션 효과 */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+        /* 1. Typography System (Prettier & Elegant) */
+        h1, h2 {
+            font-family: 'Playfair Display', serif; /* 우아한 세리프체 */
+            letter-spacing: -0.01em;
+        }
 
-h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  color: #f1f5f9;
-}
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+        }
 
-p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #cbd5e1;
-  margin-bottom: 1.5rem;
-}
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
-/* 2. Button/CTA Polish: SyllabusX 버튼 업그레이드 */
-.cta-button {
-  display: inline-block;
-  background: rgba(99, 102, 241, 0.9); /* 인디고 색상 */
-  color: white;
-  padding: 12px 28px;
-  border-radius: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-}
+        p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 70ch;
+        }
 
-.cta-button:hover {
-  background: rgba(79, 70, 229, 1);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.4);
-}
+        /* 2. Button/CTA Polish (Sophisticated) */
+        .cta-button {
+            display: inline-block;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 14px 32px;
+            border-radius: 4px; /* 각진 느낌으로 더 전문적으로 */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.4s ease;
+            background: transparent;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-gold);
+            color: #121212;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+        }
+
+        .gear-list {
+            font-style: italic;
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
     </style>
 </head>
-<body class="max-w-3xl mx-auto p-8 md:p-20">
+<body class="max-w-4xl mx-auto px-6 py-20">
 
-    <header class="mb-16 text-center">
-        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900/30 rounded-full border border-blue-500/30">
+    <header class="mb-20">
+        <div class="inline-block border border-[#D4AF37] px-3 py-1 mb-6 text-xs font-semibold tracking-widest text-[#D4AF37] uppercase">
             9th Semester Berklee Student
         </div>
-        <h1 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">
-            Ted Kwon
-        </h1>
-        <p class="text-xl text-slate-400 font-light">Guitarist & Music Business Strategist</p>
-        
-        <div class="mt-6 flex justify-center gap-6 text-slate-500">
-            <a href="#" class="hover:text-blue-400 transition-colors">Instagram</a>
-            <a href="#" class="hover:text-blue-400 transition-colors">YouTube</a>
-            <a href="#" class="hover:text-blue-400 transition-colors">LinkedIn</a>
-        </div>
+        <h1>Ted Kwon</h1>
+        <p class="text-xl italic">Music Business & Performance Major</p>
+        <p class="mt-4 gear-list">Gear: Suhr Guitars, Strandberg, Quad Cortex</p>
     </header>
 
-    <div class="grid md:grid-cols-2 gap-8 mb-16">
-        <section class="glass-card p-6 rounded-2xl">
-            <h2 class="text-sm font-bold text-blue-500 uppercase tracking-widest mb-4 italic">Primary Gear</h2>
-            <ul class="space-y-2 text-slate-300">
-                <li class="flex items-center">🎸 Suhr Modern</li>
-                <li class="flex items-center">🎸 Strandberg Salen Jazz NX 6</li>
-                <li class="flex items-center">🎛️ Neural DSP Quad Cortex</li>
-                <li class="flex items-center">💻 MacBook Pro M3 14"</li>
+    <section>
+        <h2>What I’m Building: SyllabusX</h2>
+        <p>
+            Every week, thousands of professional-grade creative assets are produced at elite music schools as assignments, only to be discarded after grading. I see a hidden gold mine in this "Syllabus Output."
+        </p>
+        
+        <div class="card">
+            <h3 class="text-xl font-bold mb-4 text-[#F5F5F5]">How to Source Pro Audio (For Free)</h3>
+            <ul class="space-y-4 text-[#A0A0A0]">
+                <li>• <strong>Visit Final Recitals:</strong> Students create studio-quality scores for their finals. These are ready for use.</li>
+                <li>• <strong>SoundCloud "Student" Tags:</strong> Find world-class talent before they hit the mainstream market.</li>
+                <li>• <strong>Offer Credits:</strong> For many students, a real-world commercial credit is more valuable than a small fee.</li>
             </ul>
-        </section>
-
-        <section class="glass-card p-6 rounded-2xl">
-            <h2 class="text-sm font-bold text-indigo-500 uppercase tracking-widest mb-4 italic">On My Mind</h2>
-            <ul class="space-y-2 text-slate-300">
-                <li class="flex items-center">🏃 Madrid Marathon Prep</li>
-                <li class="flex items-center">🎵 Jazz-Fusion Improvisation</li>
-                <li class="flex items-center">📈 Music Tech Entrepreneurship</li>
-            </ul>
-        </section>
-    </div>
-
-    <hr class="border-slate-800 mb-16">
-
-    <section class="mb-16">
-        <h2 onclick="toggleContent()" class="text-2xl font-bold cursor-pointer hover:text-blue-400 transition-colors flex justify-between items-center group">
-            What I Care About Right Now
-            <span class="text-sm text-slate-500 group-hover:text-blue-500">Click to explore →</span>
-        </h2>
-        <div id="purpose-text" class="hidden-content mt-6 p-8 glass-card rounded-2xl text-slate-200 leading-relaxed italic border-l-4 border-blue-500">
-            I am currently curious about the untapped human capital of elite music students. I am exploring how to turn academic musical assignments into "production-ready" commercial assets. The problem of high-level creative work being treated as disposable after grading matters to me because it represents a massive loss of value for students. You should follow my work if you're interested in a future where elite student output is directly integrated into the global music market.
         </div>
+
+        <p class="mt-8">
+            If you want to skip the manual search and access a verified network of elite student talent, join the waitlist for <strong>SyllabusX</strong>.
+        </p>
+
+        <a href="#" class="cta-button">Join the Waitlist</a>
     </section>
 
-    <section class="glass-card p-10 rounded-3xl border-2 border-blue-500/20 shadow-2xl shadow-blue-500/10">
-        <h2 class="text-3xl font-bold mb-6 italic">Building: <span class="text-blue-400 text-4xl">SyllabusX</span></h2>
-        <div class="space-y-4 text-lg text-slate-300 mb-8">
-            <p>A platform connecting corporate projects with music school curricula.</p>
-            <p><strong>For:</strong> Indie game developers needing pro-grade audio assets.</p>
-            <p><strong>Solution:</strong> Professional results at a scholarship-level budget.</p>
-        </div>
-        <a href="mailto:tedkwon@example.com" class="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-blue-600/30">
-            Join the Waitlist
-        </a>
-    </section>
-
-    <footer class="mt-20 text-center text-slate-600 text-sm">
-        © 2026 Ted Kwon | Built with Vibe Coding on MacBook Pro M3
-    </footer>
-
-    <script>
-        function toggleContent() {
-            const content = document.getElementById('purpose-text');
-            content.style.display = (content.style.display === "block") ? "none" : "block";
-        }
-    </script>
 </body>
 </html>
